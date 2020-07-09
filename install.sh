@@ -29,7 +29,7 @@ rm /home/$me/unifi-va/unifi-update.sh &> /dev/null
 curl https://get.glennr.nl/unifi/update/unifi-update.sh --output /home/$me/unifi-va/unifi-update.sh &> /dev/null
 rm unifi-lets-encrypt.sh &> /dev/null
 curl https://get.glennr.nl/unifi/extra/unifi-lets-encrypt.sh --output /home/$me/unifi-va/unifi-lets-encrypt.sh &> /dev/null
-sudo bash /home/$me/unifi-va/unifi-latest.sh
+sudo bash /home/$me/unifi-va/unifi-latest.sh --skip
 
 # Enable menu
 cd /etc/profile.d/
