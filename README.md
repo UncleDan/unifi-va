@@ -6,7 +6,7 @@
  | |__| | | | | | | | | | |___| (_) | | | | |_| | | (_) | | |  __/ |   
   \____/|_| |_|_|_| |_|  \_____\___/|_| |_|\__|_|  \___/|_|_|\___|_|   
 
-      V I R T U A L   A P P L I A N C E   BY   R E C K L E S S O P
+      V I R T U A L   A P P L I A N C E   B Y   R E C K L E S S O P
 	  
    F E A T U R I N G   G L E N N   R.   I N S T A L L   S C R I P T S
 ```

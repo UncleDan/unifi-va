@@ -20,20 +20,23 @@ do
 
   # start menu output
   clear
-  echo "=================================================="
-  echo "=      Recklessop's Unifi Virtual Appliance      ="
-  echo "=        Info and Config menu v1.2.0             ="
-  echo "=================================================="
+  echo "  _    _       _  __ _    _____            _             _ _           "
+  echo " | |  | |     (_)/ _(_)  / ____|          | |           | | |          "
+  echo " | |  | |_ __  _| |_ _  | |     ___  _ __ | |_ _ __ ___ | | | ___ _ __ "
+  echo " | |  | | '_ \| |  _| | | |    / _ \| '_ \| __| '__/ _ \| | |/ _ \ '__|"
+  echo " | |__| | | | | | | | | | |___| (_) | | | | |_| | | (_) | | |  __/ |   "
+  echo -e "  \____/|_| |_|_|_| |_|  \_____\___/|_| |_|\__|_|  \___/|_|_|\___|_|   \n"
+  echo -e "      V I R T U A L   A P P L I A N C E   B Y   R E C K L E S S O P\n"
+  echo -e "   F E A T U R I N G   G L E N N   R.   I N S T A L L   S C R I P T S\n"
   echo "Current Network Config:"
   echo "   Interface Name: $interface"
   echo "   Details: $ipinfo"
-  echo "   Default Gateway: $ipgw"
-  echo "=================================================="
-  echo -e "Select an action from the menu below\n"
-  echo "1.) Update Unifi Application    2.) Configure Network Settings"
-  echo "3.) Update Unifi-va Scripts     4.) Bash Shell"
-  echo "5.) Change unifi user password  6.) Update system UUIDs"
-  echo "7.) Exit"
+  echo -e "   Default Gateway: $ipgw\n"
+  echo -e "Select an action from the menu below:\n"
+  echo "1. Update Unifi Application   | 2. Configure Network Settings"
+  echo "3. Update Unifi-va Scripts    | 4. Bash Shell"
+  echo "5. Change unifi user password | 6. Update system UUIDs"
+  echo -e "7. Exit\n"
   read choice
   case "$choice" in
           1) # Update Unifi Appliance
@@ -58,8 +61,12 @@ do
               clear
               echo "Updating Unifi from GitHub"
               (cd /home/unifi/unifi-va/ && git reset --hard HEAD && git pull https://github.com/UncleDan/unifi-va/)
-	      chmod 755 /home/unifi/unifi-va/update-apt.sh
-	      sudo /home/unifi/unifi-va/update-apt.sh
+              rm /home/unifi/unifi-va/unifi-latest.sh &> /dev/null
+              curl https://get.glennr.nl/unifi/install/install_latest/unifi-latest.sh --output /home/unifi/unifi-va/unifi-latest.sh &> /dev/null
+              rm /home/unifi/unifi-va/unifi-update.sh &> /dev/null
+              curl https://get.glennr.nl/unifi/update/unifi-update.sh --output /home/unifi/unifi-va/unifi-update.sh &> /dev/null
+              rm unifi-lets-encrypt.sh &> /dev/null
+              curl https://get.glennr.nl/unifi/extra/unifi-lets-encrypt.sh --output /home/unifi/unifi-va/unifi-lets-encrypt.sh &> /dev/null
               ;;
           4) # enter bash shell prompt
               clear
