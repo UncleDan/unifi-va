@@ -24,6 +24,9 @@ git clone https://github.com/UncleDan/unifi-va.git /home/$me/unifi-va
 sudo pip3 install -r /home/$me/unifi-va/requirements.txt
 chmod 755 /home/$me/unifi-va/*.sh
 
+# Install VMware Tools
+sudo apt install open-vm-tools
+
 # Download Glenn R. scripts and launch install
 rm /home/$me/unifi-va/unifi-latest.sh &> /dev/null
 curl https://get.glennr.nl/unifi/install/install_latest/unifi-latest.sh --output /home/$me/unifi-va/unifi-latest.sh &> /dev/null
