@@ -36,10 +36,11 @@ do
   echo "1. Update Unifi Application   | 2. Configure Network Settings"
   echo "3. Update Unifi-va Scripts    | 4. Bash Shell"
   echo "5. Change unifi user password | 6. Update system UUIDs"
-  echo -e "7. Exit\n"
+  echo "7. Easy Update by Glenn R.    | 8. Let's Encrypt by Glenn R."
+  echo "9. Exit                      "
   read choice
   case "$choice" in
-          1) # Update Unifi Appliance from apt repo
+          1) # Update Unifi from Ubuntu APT repo
               clear
               echo "Updating Unifi from Ubuntu APT repo"
               (sudo apt update && sudo apt upgrade -y)
@@ -89,9 +90,18 @@ do
               sudo /etc/init.d/unifi restart
               ;;
 
-          7) # exit the menu script
+          7) # Run Easy Update Script by Glenn R.
+              sudo /home/unifi/unifi-va/unifi-update.sh
+              ;;
+
+          8) # Run Let's Encrypt Script by Glenn R."
+              sudo /home/unifi/unifi-va/unifi-lets-encrypt.sh
+              ;;
+
+          9) # exit the menu script (and the SSH session if present)
               exit
               ;;
+
           *) echo "invalid option try again";;
       esac
       echo "Press any key to Continue..."
