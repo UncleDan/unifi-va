@@ -41,3 +41,6 @@ sudo /home/$me/unifi-va/unifi-latest.sh --skip
 cd /etc/profile.d/
 sudo ln -s /home/$me/unifi-va/menu.sh
 cd ~
+
+# Bye
+echo -e "\nAll done. Type 'exit' and re-login tu use @recklessop menu!\n"
