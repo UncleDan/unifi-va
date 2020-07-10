@@ -39,7 +39,7 @@ do
   echo -e "7. Exit\n"
   read choice
   case "$choice" in
-          1) # Update Unifi Appliance
+          1) # Update Unifi Appliance from apt repo
               clear
               echo "Updating Unifi from Ubuntu APT repo"
               (sudo apt update && sudo apt upgrade -y)
@@ -67,6 +67,7 @@ do
               curl https://get.glennr.nl/unifi/update/unifi-update.sh --output /home/unifi/unifi-va/unifi-update.sh &> /dev/null
               rm unifi-lets-encrypt.sh &> /dev/null
               curl https://get.glennr.nl/unifi/extra/unifi-lets-encrypt.sh --output /home/unifi/unifi-va/unifi-lets-encrypt.sh &> /dev/null
+              chmod 755 /home/unifi/unifi-va/*.sh
               ;;
           4) # enter bash shell prompt
               clear
