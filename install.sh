@@ -20,6 +20,7 @@ sudo chown -R root:root /etc/systemd/system/getty@tty1.service.d
 sudo apt update
 sudo apt upgrade -y
 sudo apt install python3-pip git -y
+sudo pip3 install -r /home/$me/unifi-va/requirements.txt
 git clone https://github.com/UncleDan/unifi-va.git /home/$me/unifi-va
 
 # Download Glenn R. scripts and launch install
@@ -30,6 +31,9 @@ curl https://get.glennr.nl/unifi/update/unifi-update.sh --output /home/$me/unifi
 rm unifi-lets-encrypt.sh &> /dev/null
 curl https://get.glennr.nl/unifi/extra/unifi-lets-encrypt.sh --output /home/$me/unifi-va/unifi-lets-encrypt.sh &> /dev/null
 sudo bash /home/$me/unifi-va/unifi-latest.sh --skip
+
+# Set bash scripts as esecutable
+chmod 755 /home/$me/unifi-va/*.sh
 
 # Enable menu
 cd /etc/profile.d/
