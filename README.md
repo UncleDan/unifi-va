@@ -26,4 +26,9 @@
 * www [https://www.danielelolli.it/](https://www.danielelolli.it/)
 * GitHub [https://github.com/UncleDan/unifi-va](https://github.com/UncleDan/unifi-va)
 
+## Copy-And-Paste Intallation
+```
+git clone https://github.com/UncleDan/unifi-va.git && chmod 755 /home/$(whoami)/unifi-va/*.sh && sudo /home/$(whoami)/unifi-va/install.sh
+```
+
 **_Unifi_ and all other trademarks are property of the respective owners. We are _NOT_ affiliated or related in any other way to _Ubiquiti Networks_**.
